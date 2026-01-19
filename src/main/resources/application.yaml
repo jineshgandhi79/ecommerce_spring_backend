@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ecommerce
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ecommerce
+      database: ecommerce
+
+server:
+  port: 8080
+
+payment:
+  mock:
+    service:
+      url: http://localhost:8081
+      webhook:
+        url: http://localhost:8080/api/webhooks/payment
+
+logging:
+  level:
+    com.example.ecommerce: DEBUG
+    org.springframework.data.mongodb: DEBUG
